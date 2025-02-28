@@ -1,18 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
-import  Component  from './componer';
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          holaa
-        </p>
-        <Component />
-      </header>
-    </div>
-  );
-}
+import{useState} from 'react';
 
-export default App;
+function Square() {
+    const [value, setValue] = useState(null);
+    function handleClick() {
+      setValue("x");
+    }
+  
+  return <button className="square" onClick={handleClick}>{value}</button>;
+}
+export default function Board() {
+  return (
+  <>
+  <div className="Board-row">
+      <Square />
+      <Square />
+      <Square />
+  </div>
+  <div className="Board-row">
+      <Square />
+      <Square />
+      <Square />
+  </div>
+  <div className="Board-row">
+      <Square />
+      <Square />
+      <Square />
+
+  </div>
+  </>
+);
+}
