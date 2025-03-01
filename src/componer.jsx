@@ -1,0 +1,1 @@
+<Square value={squares[0]} onSquareClick={handleClick(0)} />
